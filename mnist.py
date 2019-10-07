@@ -128,6 +128,7 @@ def grad_descent(num_iterations, costs, activation):
     return costs, parameters
 
 grad_descent(num_iterations, costs, activation)
+predictions = predict(parameters, X_test)
 
 # Visualising the Cost vs num_iterations
 plt.plot(costs)
