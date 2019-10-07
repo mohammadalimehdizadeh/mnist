@@ -70,7 +70,8 @@ def forward_prop(parameters, X_train, activation):
 
 # Computing the Cost
 def compute_cost(activation):
-    cost = - np.sum((Y_train * np.log(activation["A4"])) + ((1 - Y_train) * np.log(1 - activation["A4"]))) / m
+    loss = - np.sum((Y_train * np.log(activation["A4"])), axis=0, keepdims=True)
+    cost = np.sum(loss, axis=1) / m
     return cost
 
 
